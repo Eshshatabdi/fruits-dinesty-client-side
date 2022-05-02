@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import useItem from '../../../hooks/useItem';
 import Item from '../Item/Item';
 
 const Items = () => {
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
-        fetch('data.json')
-            .then(res => res.json())
-            .then(data => setProducts(data))
+    const [products] = useItem();
+    // useEffect(() => {
+    //     fetch('data.json')
+    //         .then(res => res.json())
+    //         .then(data => setProducts(data))
 
-    }, [])
+    // }, [])
     return (
         <div className='container mt-5 g-5'>
             <div className="row">

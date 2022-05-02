@@ -1,7 +1,6 @@
 import React from 'react';
-import './Item.css';
 
-const Item = ({ product }) => {
+const MoreItem = ({ product }) => {
     const { img, name, price, description, quantity, supplierName } = product;
 
     return (
@@ -13,12 +12,12 @@ const Item = ({ product }) => {
                 <p>Description:{description}</p>
                 <p>Quantity:{quantity}</p>
                 <p>supplier Name:{supplierName}</p>
-                <button className='btn btn-danger'>update</button>
+                <button>update</button>
 
             </div>
 
         </div>
-    );
-};
+    )
+}
 
-export default Item;
+export default MoreItem;
