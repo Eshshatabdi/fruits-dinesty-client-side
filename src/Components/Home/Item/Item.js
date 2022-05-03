@@ -12,6 +12,7 @@ const Item = ({ item }) => {
     }
 
     return (
+
         <div className='col-md-4 gy-5'>
             <div className="item">
                 <img src={img} alt="" />
@@ -25,6 +26,9 @@ const Item = ({ item }) => {
             </div>
 
         </div>
+
+
+
     );
 };
 

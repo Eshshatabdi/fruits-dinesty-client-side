@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const InventoryId = () => {
     const { inventoryId } = useParams();
@@ -9,7 +9,29 @@ const InventoryId = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data));
-    }, [])
+    }, []);
+    const handleUpdateQuantity = () => {
+
+        const newQuantity = (parseInt(item.quantity) - 1);
+        const updateQuantity = { newQuantity }
+        const url = `http://localhost:5000/service/${inventoryId}`
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+
+            },
+            body: JSON.stringify(updateQuantity)
+
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                alert('quantity updated')
+            })
+
+
+    }
     return (
         <div className='container'>
             <div className="row">
@@ -21,10 +43,13 @@ const InventoryId = () => {
                         <p>Description:{item.description}</p>
                         <p>Quantity:{item.quantity}</p>
                         <p>supplier Name:{item.supplierName}</p>
-                        <button className='btn btn-danger'>Deliverd</button>
+                        <button onClick={handleUpdateQuantity} className='btn btn-danger'>Deliverd</button>
                     </div>
 
                 </div>
+            </div>
+            <div className='text-center '>
+                <Link to='/manageitem' ><button className='btn btn-danger'>see more in manage item </button></Link>
             </div>
 
         </div>

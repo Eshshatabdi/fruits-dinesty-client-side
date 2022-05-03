@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import useItem from '../../../hooks/useItem';
 import Item from '../Item/Item';
 
@@ -15,6 +16,9 @@ const Items = () => {
                         item={item}>
                     </Item>)
                 }
+            </div>
+            <div className='text-center '>
+                <Link to='/manageitem' ><button className='btn btn-danger'>see more in manage item </button></Link>
             </div>
 
 
