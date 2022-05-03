@@ -11,6 +11,8 @@ import AddItem from './Components/AddItem/AddItem';
 import InventoryId from './Components/InventoryId/InventoryId';
 import MyItem from './Components/MyItem/MyItem';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
+import Blogs from './Components/Blogs/Blogs';
+import NotFound from './Components/notFound/notFound';
 
 function App() {
   return (
@@ -45,6 +47,8 @@ function App() {
             <InventoryId></InventoryId>
           </RequireAuth>
         }></Route>
+        <Route path='blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
 
 
