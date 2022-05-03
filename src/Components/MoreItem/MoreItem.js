@@ -33,7 +33,7 @@ const MoreItem = ({ item }) => {
                 <p>Description:{description}</p>
                 <p>Quantity:{quantity}</p>
                 <p>supplier Name:{supplierName}</p>
-                <button onClick={() => handleDelete(item._id)} className='btn btn-danger'>Delete</button>
+                <button onClick={() => handleDelete(_id)} className='btn btn-danger'>Delete</button>
 
             </div>
 
