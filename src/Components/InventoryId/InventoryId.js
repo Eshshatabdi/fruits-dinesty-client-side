@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 const InventoryId = () => {
     const { inventoryId } = useParams();
     const [item, setItem] = useState({});
+    // const [update, setUpdate] = useState({})
     useEffect(() => {
         const url = `http://localhost:5000/service/${inventoryId}`
         fetch(url)
@@ -27,6 +28,7 @@ const InventoryId = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                // setUpdate(data)
                 alert('quantity updated')
             })
 
