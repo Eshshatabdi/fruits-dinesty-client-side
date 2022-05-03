@@ -1,7 +1,7 @@
 import React from 'react';
 
-const MoreItem = ({ product }) => {
-    const { img, name, price, description, quantity, supplierName } = product;
+const MoreItem = ({ item }) => {
+    const { img, name, price, description, quantity, supplierName } = item;
 
     return (
         <div className='col-md-4 gy-5'>

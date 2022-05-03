@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 
 const useItem = () => {
-    const [products, setProducts] = useState([]);
+    const [items, setItems] = useState([]);
     useEffect(() => {
-        fetch('data.json')
+        fetch('http://localhost:5000/service')
             .then(res => res.json())
-            .then(data => setProducts(data))
+            .then(data => setItems(data))
 
     }, [])
 
-    return [products, setProducts]
+    return [items, setItems]
 
 }
 export default useItem;

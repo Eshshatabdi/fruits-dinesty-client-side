@@ -3,15 +3,15 @@ import useItem from '../../hooks/useItem';
 import MoreItem from '../MoreItem/MoreItem';
 
 const ManageItem = () => {
-    const [products] = useItem();
+    const [items] = useItem();
     return (
         <div className='container mt-5 g-5'>
             <div className="row">
                 {
-                    products.map(product => <MoreItem
-                        key={product.key}
+                    items.map(item => <MoreItem
+                        key={item._id}
 
-                        product={product}>
+                        item={item}>
                     </MoreItem>)
                 }
             </div>
