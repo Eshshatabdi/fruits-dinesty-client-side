@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
 import useItem from '../../hooks/useItem';
 
 const MoreItem = ({ item }) => {
     const { _id, img, name, price, description, quantity, supplierName } = item;
-    // const [deletes,setDeletes]= useState({});
+
     const [items, setItems] = useItem();
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure to delete')
@@ -18,6 +17,8 @@ const MoreItem = ({ item }) => {
                     console.log(data);
                     const remaining = items.filter(item => item._id !== id);
                     setItems(remaining);
+
+
                 })
 
         }
