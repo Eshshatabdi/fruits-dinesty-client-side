@@ -1,13 +1,16 @@
 import useItem from '../../hooks/useItem';
 
+
 const MoreItem = ({ item }) => {
     const { _id, img, name, price, description, quantity, supplierName } = item;
+
 
     const [items, setItems] = useItem();
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure to delete')
         if (proceed) {
             const url = `http://localhost:5000/service/${id}`;
+
             fetch(url, {
                 method: 'DELETE'
 
