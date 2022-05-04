@@ -2,12 +2,12 @@ import useItem from '../../hooks/useItem';
 
 
 const MoreItem = ({ item }) => {
-    const { _id, img, name, price, description, quantity, supplierName } = item;
+    const { img, name, price, description, quantity, supplierName } = item;
 
 
     const [items, setItems] = useItem();
     const handleDelete = id => {
-        const proceed = window.confirm('Are you sure to delete')
+        const proceed = window.confirm('Are you sure you want to delete')
         if (proceed) {
             const url = `http://localhost:5000/service/${id}`;
 
@@ -37,7 +37,7 @@ const MoreItem = ({ item }) => {
                 <p>Description:{description}</p>
                 <p>Quantity:{quantity}</p>
                 <p>supplier Name:{supplierName}</p>
-                <button onClick={() => handleDelete(_id)} className='btn btn-danger'>Delete</button>
+                <button onClick={() => handleDelete(item._id)} className='btn btn-danger'>Delete</button>
 
             </div>
 
