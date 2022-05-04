@@ -19,7 +19,7 @@ const GoogleLogin = () => {
     return (
         <div>
             {showError}
-            <button onClick={() => signInWithGoogle()} className='btn btn-dark w-50 d-block mx-auto my-2'>
+            <button onClick={() => signInWithGoogle()} className='btn btn-light w-50 d-block mx-auto my-2'>
                 <img src={google} alt="" />
                 <span className='px-3'> Continue with Google</span></button>
 

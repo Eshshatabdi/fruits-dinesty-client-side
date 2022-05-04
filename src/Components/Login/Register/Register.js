@@ -59,7 +59,7 @@ const Register = () => {
 
     return (
         <div className='container w-50 mx-auto'>
-            <h3 className='text-center text-primary'>Please Register</h3>
+            <h3 className='text-center text-success'>Please Register</h3>
             <Form onSubmit={handleCreateUser} >
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Name</Form.Label>
@@ -82,12 +82,12 @@ const Register = () => {
                 </Form.Group>
 
                 <p className='text-danger'>{error}</p>
-                <Button variant="primary" type="submit">
+                <Button variant="success" type="submit">
                     Register
                 </Button>
             </Form>
             <p>
-                Already have an account? <Link className='form-link text-decoration-none ' to='/login'>Please Login</Link>
+                Already have an account? <Link className='form-link text-decoration-none text-success ' to='/login'>Please Login</Link>
             </p>
 
 

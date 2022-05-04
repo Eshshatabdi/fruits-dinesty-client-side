@@ -12,7 +12,11 @@ import InventoryId from './Components/InventoryId/InventoryId';
 import MyItem from './Components/MyItem/MyItem';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
 import Blogs from './Components/Blogs/Blogs';
-import NotFound from './Components/notFound/notFound';
+import PageNotFound from './Components/PageNotFound/PageNotFound';
+import Footer from './Components/Footer/Footer';
+
+
+
 
 function App() {
   return (
@@ -48,8 +52,9 @@ function App() {
           </RequireAuth>
         }></Route>
         <Route path='blogs' element={<Blogs></Blogs>}></Route>
-        <Route path='*' element={<NotFound></NotFound>}></Route>
+        <Route path='*' element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
+      <Footer></Footer>
 
 
     </div>

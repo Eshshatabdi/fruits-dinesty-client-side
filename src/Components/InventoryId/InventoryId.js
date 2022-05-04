@@ -50,8 +50,8 @@ const InventoryId = () => {
 
                 </div>
             </div>
-            <div className='text-center '>
-                <Link to='/manageitem' ><button className='btn btn-danger'>see more in manage item </button></Link>
+            <div className='text-center   '>
+                <Link to='/manageitem' ><button className='btn btn-danger '>see more in manage item </button></Link>
             </div>
 
         </div>

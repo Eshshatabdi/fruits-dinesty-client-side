@@ -8,6 +8,7 @@ const Items = () => {
 
     return (
         <div className='container mt-5 g-5'>
+            <h2 className='text-center text-success '>Inventory Items</h2>
             <div className="row">
                 {
                     items.slice(0, 6).map(item => <Item
@@ -17,8 +18,8 @@ const Items = () => {
                     </Item>)
                 }
             </div>
-            <div className='text-center '>
-                <Link to='/manageitem' ><button className='btn btn-danger'>see more in manage item </button></Link>
+            <div className='text-center my-5 '>
+                <Link to='/manageitem' ><button className='btn btn-danger'>see more in manage item  </button></Link>
             </div>
 
 
