@@ -6,7 +6,7 @@ const Banner = () => {
         <div className='container'>
             <div className='row align-items-center'>
                 <div className="col-md-6  mt-5 ">
-                    <h2 className='text-success'>Fruit Dynasty</h2>
+                    <h2 className='text-success'>Fruits Dynasty</h2>
                     <p>It is one of the best source of healthy fruits.Where you can get your desire fruits and never worry about your health. </p>
 
                 </div>

@@ -5,7 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import GoogleLogin from '../GoogleLogin/GoogleLogin';
 // import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css'
+
 
 
 const Login = () => {
@@ -46,7 +46,7 @@ const Login = () => {
     if (user) {
         navigate(from, { replace: true });
     }
-    
+
 
 
 
@@ -83,7 +83,7 @@ const Login = () => {
             <p>New in this warehouse? <Link to='/register' className='text-success pe-auto text-decoration-none' onClick={navigateRegister}>Please Register</Link> </p>
             <p>Forget Password? <button to='/register' className='btn btn-link text-success pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button> </p>
             <GoogleLogin></GoogleLogin>
-            {/* <ToastContainer /> */}
+
 
         </div>
     );

@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+# Fruits Dynasty
+## Live link:
+##
+* In home page header,banner,inventory items,extra section and footer added.
+* In home page 6 inventory item set and other inventory item it set in manage item page.
+* You can place your item in Add item section.
+* In my Item only login user will see their item
+* there is also register and login page
+* In Blog section Qus Ans is added.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

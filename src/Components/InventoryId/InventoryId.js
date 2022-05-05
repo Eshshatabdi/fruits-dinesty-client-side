@@ -1,22 +1,21 @@
-import { stringify } from '@firebase/util';
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 const InventoryId = () => {
-    const { inventoryId } = useParams();
+    const { id } = useParams();
     const [item, setItem] = useState({});
-    // const [update, setUpdate] = useState({})
+    const [update, setUpdate] = useState([])
     useEffect(() => {
-        const url = `http://localhost:5000/service/${inventoryId}`
+        const url = `http://localhost:5000/service/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data));
-    }, []);
+    }, [item, update]);
     const handleUpdateQuantity = () => {
 
         const newQuantity = (parseInt(item.quantity) - 1);
         const updateQuantity = { newQuantity }
-        const url = `http://localhost:5000/service/${inventoryId}`
+        const url = `http://localhost:5000/service/${id}`
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -28,8 +27,8 @@ const InventoryId = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
-                // setUpdate(data)
+                // console.log(data);
+                setUpdate(data)
                 alert('quantity updated')
             })
 
@@ -37,10 +36,10 @@ const InventoryId = () => {
     }
     const handleRestock = (event) => {
         event.preventDefault();
-        const number = event.target.number.value;
-        const newQuantity = parseInt(item.quantity) + (number);
+        const number = (event.target.number.value) * 1;
+        const newQuantity = parseInt(item.quantity) + number;
         const updateQuantity = { newQuantity }
-        const url = `http://localhost:5000/service/${inventoryId}`
+        const url = `http://localhost:5000/service/${id}`
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -52,8 +51,8 @@ const InventoryId = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
-                // setUpdate(data)
+                // console.log(data);
+                setUpdate(data)
                 alert('quantity updated')
             })
 
@@ -84,8 +83,8 @@ const InventoryId = () => {
             </form>
 
 
-            <div className='text-center   '>
-                <Link to='/manageitem' ><button className='btn btn-danger '>see more in manage item </button></Link>
+            <div className='text-center'>
+                <Link to='/manageitem' ><button className='btn btn-danger '>Manage inventories </button></Link>
             </div>
 
         </div>

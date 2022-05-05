@@ -19,7 +19,7 @@ const Items = () => {
                 }
             </div>
             <div className='text-center my-5 '>
-                <Link to='/manageitem' ><button className='btn btn-danger'>see more in manage item  </button></Link>
+                <Link to='/manageitem' ><button className='btn btn-danger'>Manage inventories</button></Link>
             </div>
 
 

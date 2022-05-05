@@ -7,7 +7,7 @@ const Footer = () => {
         <div className='bg-black text-light mt-3 d-flex justify-content-evenly' >
 
             <div className='mt-5'>
-                <h5>Fruit Dynasty</h5>
+                <h5>Fruits Dynasty</h5>
             </div>
             <div>
                 <h5>Services</h5>
