@@ -8,7 +8,7 @@ const MyItem = () => {
 
     const [user] = useAuthState(auth);
     const [myItems, setMyItems] = useState([]);
-    const email = user.email;
+    const email = user?.email;
 
 
 
@@ -16,7 +16,7 @@ const MyItem = () => {
 
 
 
-        fetch(`http://localhost:5000/service?email=${email}`)
+        fetch(`http://localhost:5000/services/?email=${email}`)
 
             .then(res => res.json())
             .then(data => setMyItems(data))
