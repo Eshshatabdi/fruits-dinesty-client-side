@@ -4,6 +4,7 @@ import Banner from '../Banner/Banner';
 import FoodDeliverSection from '../FoodDeliverSection/FoodDeliverSection';
 import Items from '../Items/Items';
 
+
 const Home = () => {
     return (
         <div>

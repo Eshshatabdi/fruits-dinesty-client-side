@@ -14,6 +14,7 @@ import RequireAuth from './Components/RequireAuth/RequireAuth';
 import Blogs from './Components/Blogs/Blogs';
 import PageNotFound from './Components/PageNotFound/PageNotFound';
 import Footer from './Components/Footer/Footer';
+import About from './Components/About/About';
 // import 'react-toastify/dist/ReactToastify.css'
 
 
@@ -37,6 +38,7 @@ function App() {
           </RequireAuth>
         }></Route>
         <Route path='blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='about' element={<About></About>}></Route>
         <Route path='*' element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
       <Footer></Footer>
