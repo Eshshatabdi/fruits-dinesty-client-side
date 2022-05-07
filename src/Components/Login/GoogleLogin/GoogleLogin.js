@@ -3,6 +3,7 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate, useLocation } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import google from '../../../images/google (1).png'
+import Loading from '../../Loading/Loading';
 
 const GoogleLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
@@ -11,6 +12,11 @@ const GoogleLogin = () => {
     let from = location.state?.from?.pathname || "/";
 
     let showError;
+
+
+    if (loading) {
+        return <Loading></Loading>
+    }
     if (error) {
         showError = <p className='text-danger'>Error:{error?.message}</p>
 

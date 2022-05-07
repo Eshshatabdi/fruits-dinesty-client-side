@@ -1,10 +1,13 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
+import Loading from '../../Loading/Loading';
 import GoogleLogin from '../GoogleLogin/GoogleLogin';
-// import { ToastContainer, toast } from 'react-toastify';
+
 
 
 
@@ -22,6 +25,10 @@ const Login = () => {
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth
     );
 
+    if (loading || sending) {
+        return <Loading></Loading>
+    }
+
 
 
 
@@ -32,9 +39,14 @@ const Login = () => {
     const handlePassword = event => {
         setPassword(event.target.value);
     };
-    const handleUserLogIn = event => {
+    const handleUserLogIn = async event => {
         event.preventDefault();
-        signInWithEmailAndPassword(email, password)
+        await signInWithEmailAndPassword(email, password)
+        const { data } = await axios.post('http://localhost:5000/login', { email });
+        console.log(data)
+        localStorage.setItem('accessToken', data.accessToken)
+        navigate(from, { replace: true });
+
     }
 
 
@@ -44,7 +56,7 @@ const Login = () => {
         navigate('/register')
     }
     if (user) {
-        navigate(from, { replace: true });
+        // navigate(from, { replace: true });
     }
 
 
@@ -54,7 +66,7 @@ const Login = () => {
         setEmail(event.target.value);
 
         await sendPasswordResetEmail(email);
-        alert('Sent email');
+        toast('Sent email');
 
     }
     return (
@@ -72,7 +84,7 @@ const Login = () => {
                 </Form.Group>
                 <p className='text-danger'>{error?.message}</p>
                 {
-                    loading && <h4>Loading....</h4>
+                    loading && <h4><Loading></Loading></h4>
 
                 }
 

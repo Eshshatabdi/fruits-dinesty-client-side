@@ -15,7 +15,8 @@ import Blogs from './Components/Blogs/Blogs';
 import PageNotFound from './Components/PageNotFound/PageNotFound';
 import Footer from './Components/Footer/Footer';
 import About from './Components/About/About';
-// import 'react-toastify/dist/ReactToastify.css'
+import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -42,7 +43,7 @@ function App() {
         <Route path='*' element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
       <Footer></Footer>
-      {/* <ToastContainer /> */}
+      <ToastContainer />
 
 
     </div>

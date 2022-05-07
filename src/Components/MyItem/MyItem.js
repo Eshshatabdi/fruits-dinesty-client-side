@@ -15,8 +15,12 @@ const MyItem = () => {
     useEffect(() => {
 
 
+        fetch(`http://localhost:5000/services/?email=${email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
 
-        fetch(`http://localhost:5000/services/?email=${email}`)
+            }
+        })
 
             .then(res => res.json())
             .then(data => setMyItems(data))
@@ -52,14 +56,15 @@ const MyItem = () => {
 
     return (
         <div className='container'>
-            <h2>{myItems.length}</h2>
+            <h2>your item:{myItems.length}</h2>
 
             {
                 myItems.map(item => <LoadMyItem
                     key={item._id}
                     item={item}
                     deleteMyItem={deleteMyItem}
-                ></LoadMyItem>)
+                >
+                </LoadMyItem>)
 
             }
 

@@ -1,8 +1,13 @@
+import { useNavigate } from 'react-router-dom';
 import useItem from '../../hooks/useItem';
 
 
 const MoreItem = ({ item }) => {
-    const { img, name, price, description, quantity, supplierName } = item;
+    const { _id, img, name, price, description, quantity, supplierName } = item;
+    const navigate = useNavigate();
+    const navigateToInventory = id => {
+        navigate(`/inventory/${id}`)
+    }
 
 
     const [items, setItems] = useItem();
@@ -39,9 +44,13 @@ const MoreItem = ({ item }) => {
                 <h4>Name:{name}</h4>
                 <p>price:${price}/lb</p>
                 <p>Description:{description}</p>
-                <p>Quantity:{quantity}</p>
+                <p>Quantity:{quantity}lb</p>
                 <p>supplier Name:{supplierName}</p>
-                <button onClick={() => handleDelete(item._id)} className='btn btn-danger'>Delete</button>
+                <div className='d-flex justify-content-center'>
+                    <button onClick={() => navigateToInventory(_id)} className='btn btn-secondary me-2'>update</button>
+                    <button onClick={() => handleDelete(item._id)} className='btn btn-danger'>Delete</button>
+                </div>
+
 
             </div>
 

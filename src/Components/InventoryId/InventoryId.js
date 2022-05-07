@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const InventoryId = () => {
     const { id } = useParams();
@@ -27,10 +28,15 @@ const InventoryId = () => {
         })
             .then(res => res.json())
             .then(data => {
-                // console.log(data);
+
                 setUpdate(data)
                 alert('quantity updated')
             })
+
+        if (newQuantity === 0) {
+
+            return toast('sold out')
+        }
 
 
     }
@@ -56,6 +62,8 @@ const InventoryId = () => {
                 alert('quantity updated')
             })
 
+        event.target.reset();
+
 
 
     }
@@ -68,7 +76,7 @@ const InventoryId = () => {
                     <h4>Name:{item.name}</h4>
                     <p>price:${item.price}/lb</p>
                     <p>Description:{item.description}</p>
-                    <p>Quantity:{item.quantity}</p>
+                    <p>Quantity:{item.quantity}lb</p>
                     <p>supplier Name:{item.supplierName}</p>
                     <button onClick={handleUpdateQuantity} className='btn btn-danger mt-2'>Deliverd</button>
                 </div>

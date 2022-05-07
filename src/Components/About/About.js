@@ -5,7 +5,9 @@ const About = () => {
     return (
         <div className='container mt-5'>
             <div className="row justify-content-center align-items-center ">
+                <h2 className='text-center text-success'>Abou our Quality</h2>
                 <div className="col-md-6">
+
                     <h2 className='text-success text-center'>Our Quality and Storage</h2>
                     <div className="card">
                         <p className=''>
@@ -17,6 +19,7 @@ const About = () => {
                 </div>
                 <div className="col-md-6 mt-5">
                     <img className='w-100' src={quality} alt="" />
+                    https://stormy-depths-75418.herokuapp.com/
                 </div>
             </div>
 

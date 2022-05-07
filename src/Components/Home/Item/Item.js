@@ -19,7 +19,7 @@ const Item = ({ item }) => {
                 <h4>Name:{name}</h4>
                 <p>price:${price}/lb</p>
                 <p>Description:{description}</p>
-                <p>Quantity:{quantity}</p>
+                <p>Quantity:{quantity}lb</p>
                 <p>supplier Name:{supplierName}</p>
                 <button onClick={() => navigateToInventory(_id)} className='btn btn-danger'>update</button>
 

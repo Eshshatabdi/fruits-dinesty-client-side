@@ -12,9 +12,10 @@ const AddItem = () => {
         const description = event.target.description.value;
         const supplierName = user?.displayName;
         const supplierEmail = user?.email;
+        const sold = 0;
         const img = event.target.img.value;
 
-        const data = { name, description, img, price, quantity, supplierName, supplierEmail }
+        const data = { name, description, img, price, quantity, supplierName, supplierEmail, sold }
         const url = `http://localhost:5000/service`
         fetch(url, {
 
@@ -23,7 +24,7 @@ const AddItem = () => {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(data),
         })
             .then(res => res.json())
             .then(data => alert('successfully data added'))
