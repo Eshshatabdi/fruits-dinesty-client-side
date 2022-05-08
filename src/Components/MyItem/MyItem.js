@@ -9,18 +9,21 @@ const MyItem = () => {
     const [user] = useAuthState(auth);
     const [myItems, setMyItems] = useState([]);
     const email = user?.email;
+    
 
 
 
     useEffect(() => {
 
 
-        fetch(`http://localhost:5000/services/?email=${email}`, {
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        fetch(`https://stormy-depths-75418.herokuapp.com/services/?email=${email}`,
+            {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
 
-            }
-        })
+                }
+            })
+
 
             .then(res => res.json())
             .then(data => setMyItems(data))
@@ -32,7 +35,7 @@ const MyItem = () => {
     const deleteMyItem = id => {
         const proceed = window.confirm('Are you sure you want to delete')
         if (proceed) {
-            const url = `http://localhost:5000/service/${id}`
+            const url = `https://stormy-depths-75418.herokuapp.com/service/${id}`
             fetch(url, {
                 method: 'DELETE',
 

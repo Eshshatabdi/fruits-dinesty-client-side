@@ -16,7 +16,7 @@ const AddItem = () => {
         const img = event.target.img.value;
 
         const data = { name, description, img, price, quantity, supplierName, supplierEmail, sold }
-        const url = `http://localhost:5000/service`
+        const url = `https://stormy-depths-75418.herokuapp.com/service`
         fetch(url, {
 
 

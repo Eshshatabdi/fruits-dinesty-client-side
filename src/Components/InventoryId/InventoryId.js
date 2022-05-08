@@ -7,7 +7,7 @@ const InventoryId = () => {
     const [item, setItem] = useState({});
     const [update, setUpdate] = useState([])
     useEffect(() => {
-        const url = `http://localhost:5000/service/${id}`
+        const url = `https://stormy-depths-75418.herokuapp.com/service/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data));
@@ -16,7 +16,7 @@ const InventoryId = () => {
 
         const newQuantity = (parseInt(item.quantity) - 1);
         const updateQuantity = { newQuantity }
-        const url = `http://localhost:5000/service/${id}`
+        const url = `https://stormy-depths-75418.herokuapp.com/service/${id}`
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -45,7 +45,7 @@ const InventoryId = () => {
         const number = (event.target.number.value) * 1;
         const newQuantity = parseInt(item.quantity) + number;
         const updateQuantity = { newQuantity }
-        const url = `http://localhost:5000/service/${id}`
+        const url = `https://stormy-depths-75418.herokuapp.com/service/${id}`
         fetch(url, {
             method: 'PUT',
             headers: {

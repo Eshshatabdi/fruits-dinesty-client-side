@@ -1,5 +1,6 @@
 # Fruits Dynasty
-## Live link:
+## Live link: https://warehouse-management-739be.web.app/
+## Description: This is a fruits ware house management..here I show a simple fruits warehouse..terir service quality ete and about fruit nutririon.
 ##
 * In home page header,banner,inventory items,extra section and footer added.
 * In home page 6 inventory item set and other inventory item it set in manage item page.

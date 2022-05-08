@@ -14,7 +14,7 @@ const MoreItem = ({ item }) => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure you want to delete')
         if (proceed) {
-            const url = `http://localhost:5000/service/${id}`;
+            const url = `https://stormy-depths-75418.herokuapp.com/service/${id}`;
 
             fetch(url, {
                 method: 'DELETE'
