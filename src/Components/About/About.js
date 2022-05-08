@@ -19,7 +19,7 @@ const About = () => {
                 </div>
                 <div className="col-md-6 mt-5">
                     <img className='w-100' src={quality} alt="" />
-                    https://stormy-depths-75418.herokuapp.com/
+
                 </div>
             </div>
 
