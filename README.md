@@ -4,6 +4,7 @@
 ##
 * In home page header,banner,inventory items,extra section and footer added.
 * In home page 6 inventory item set and other inventory item it set in manage item page.
+* Users can Create an Account, Stock Update, Add Products, Delete Products, and Manage Products.
 * You can place your item in Add item section.
 * In my Item only login user will see their item
 * there is also register and login page

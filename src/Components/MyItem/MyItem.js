@@ -3,13 +3,17 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 
 import auth from '../../firebase.init';
 import LoadMyItem from '../LoadMyItem/LoadMyItem';
+import Loading from '../Loading/Loading';
 
 const MyItem = () => {
 
-    const [user] = useAuthState(auth);
+
+    const [user, loading] = useAuthState(auth);
     const [myItems, setMyItems] = useState([]);
     const email = user?.email;
-    
+    console.log(myItems)
+
+
 
 
 
@@ -27,7 +31,12 @@ const MyItem = () => {
 
             .then(res => res.json())
             .then(data => setMyItems(data))
-    }, [myItems, user])
+    }, [myItems, user, email])
+
+    if (loading) {
+        return <Loading></Loading>
+    }
+
 
 
 
@@ -62,7 +71,7 @@ const MyItem = () => {
             <h2>your item:{myItems.length}</h2>
 
             {
-                myItems.map(item => <LoadMyItem
+                myItems?.map(item => <LoadMyItem
                     key={item._id}
                     item={item}
                     deleteMyItem={deleteMyItem}
